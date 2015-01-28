@@ -5,10 +5,10 @@ require 'rspec'
 require 'logger'
 require 'rspec/expectations'
 
-browser = Watir::Browser.new :firefox
-browser = Watir::Browser.new
+# browser = Watir::Browser.new :firefox
+# browser = Watir::Browser.new
 
-#browser = Watir::Browser.new :phantomjs, :args => ['--ignore-ssl-errors=yes','--ssl-protocol=tlsv1']
+browser = Watir::Browser.new :phantomjs, :args => ['--ignore-ssl-errors=yes','--ssl-protocol=tlsv1']
 
 INDEX_OFFSET = -1
 WEBDRIVER = true
