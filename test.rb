@@ -1,3 +1,4 @@
+require "rubygems"
 require "watir-webdriver"
 require "rspec"
 require "rspec/expectations"
@@ -6,7 +7,7 @@ require "rspec/expectations"
 @browser.textarea(:id => "paste_data").send_keys("sample text here")
 @browser.button(:id => "paste_button").click
 puts @browser.url
-puts @browser.div(:class => "text").text
+@browser.div(:class => "text").wait_until_present
 @browser.div(:class => "text").text.should == "sample text here"
 @browser.close
 

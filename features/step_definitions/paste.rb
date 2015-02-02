@@ -12,12 +12,5 @@ end
 
 Then(/^a new paste should be created with the same text$/) do
   puts @browser.url
-  
-  begin
-  	puts @browser.div(:class => "text").text
-  	@browser.div(:class => "text").text.should == "sample text here"
-  rescue
-  	puts @browser.idv(:class => "alert").text
-  	return false
-  end
+  @browser.div(:class => "text").text.should == "sample text here"
 end

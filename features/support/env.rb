@@ -41,5 +41,5 @@ end
 
 at_exit do
   browser.close
-  browser.exit
+  browser.quit
 end
