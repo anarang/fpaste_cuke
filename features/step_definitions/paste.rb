@@ -12,5 +12,10 @@ end
 
 Then(/^a new paste should be created with the same text$/) do
   puts @browser.url
-  @browser.div(:class => "text").text.should == "sample text here"
+  begin
+    @browser.div(:class => "text").text.should == "sample text here"
+  rescue Exception => e
+  	alert = @browser.div(:class => "alert stretch visible alert-red").text
+  	raise alert
+  end
 end
